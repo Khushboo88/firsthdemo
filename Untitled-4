@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="list">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<script>
+var app=angular.module("list",[]);
+app.controller("myctrl",function($scope){
+$scope.collection=[{name:"Ram"},{name:"shyam"},{name:"raghu"}];
+$scope.addEntry=function(){
+$scope.collection.push({name:$scope.newData});
+}
+}
+</script>
+<div  ng-controller="myctrl">
+<ul>
+<li ng-repeat="entry in collection">{{entry.name}}</li>
+</ul>
+<input type="text" ng-model="newData">
+<button ng-click="addEntry()">add</button>
+</div>
+</body>
+</html>
