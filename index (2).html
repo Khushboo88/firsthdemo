@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<head>
+	<meta charset="utf-8">
+	<title>CallBackApp</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+
+<body ng-controller="myController">
+<table>
+	<tr ng-repeat="b in a"| orderBy : 'date'>
+        <td>{{ $index + 1 }}</td>
+		<td>{{b.globalTradeID}}</td>
+		<td>{{b.tradeID}}</td>
+		<td>{{b.date}}</td>
+		<td>{{b.type}}</td>
+		<td>{{b.rate}}</td>
+		<td>{{b.amount}}</td>
+		<td>{{b.total}}</td>
+	</tr>
+</table>	
+</body>
+
+</html>
